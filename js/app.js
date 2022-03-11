@@ -16,6 +16,7 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
+  //correction 1: it will be push, not plus
     likedPostsId.push(id); 
     //showPosts(posts);
 
@@ -30,6 +31,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
+   //correction 2: text will be dynamic type, not string type
     return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
@@ -38,6 +40,7 @@ const switchTab = (id) => {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+         //correction q/a part display block
         document.getElementById( "qa-part" ).style.display = "block";
         
 
@@ -45,6 +48,7 @@ const switchTab = (id) => {
         document.getElementById( "liked" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+         //correction q/a part display none
         document.getElementById( "qa-part" ).style.display = "none";
 
         displayLikedPosts();
@@ -52,6 +56,7 @@ const switchTab = (id) => {
         document.getElementById( "reported" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
+         //correction q/a part display none
         document.getElementById( "qa-part" ).style.display = "none";
 
         displayReportedPosts();
@@ -63,6 +68,8 @@ const createPost = (post) => {
     const userImage = post.userImage;
     const div = document.createElement( "article" );
     div.classList.add( "post" );
+
+    //correction 3/4: replace image by useimage and add array index in comments property
     div.innerHTML = `
               <div class="post__header">
                 <div class="post__profile">
