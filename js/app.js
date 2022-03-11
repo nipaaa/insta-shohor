@@ -18,7 +18,6 @@ const isLiked = (id) => {
 const addToLiked = (id) => {
   //correction 1: it will be push, not plus
     likedPostsId.push(id); 
-    //showPosts(posts);
 
     const remainingPosts = posts.filter(post => !reportedPostsId.includes(post.id));
     showPosts(remainingPosts);
